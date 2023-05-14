@@ -1,8 +1,24 @@
+#include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string>
+#include <thread>
 #include <Windows.h>
 
-int main() {}
+
+struct Person {
+    std::string name;
+    int age;
+
+    Person(char *n, int a) {
+        age = a;
+        name = std::string(n);
+    }
+};
+
+extern "C" Person* createPeron(char *name, int age){
+    return new Person(name,age);
+}
 
 void HelloWorld() {
     printf("Hello from C for Deno\n");
@@ -24,3 +40,5 @@ void mousePos(int *pos){
     pos[0] = p.x;
     pos[1] = p.y;
 }
+
+int main() {}

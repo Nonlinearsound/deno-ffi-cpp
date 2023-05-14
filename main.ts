@@ -31,7 +31,7 @@ console.log("after sleep");
 // testing passing a char pointer to the sendMessage function
 const ptr = new TextEncoder().encode("Hello World from TextEncoder as UInt8Array\0");
 
-// Thisdoes not work as Deno uses Web APIs rather than Nodejs APIs
+// This does not work as Deno uses Web APIs rather than Nodejs APIs
 // so we stick with TextEncoder
 // let arr: Uint8Array = new Deno.Buffer("Hello World from raw *UInt8Array").bytes();
 // lib.symbols.sendMessage(arr);
